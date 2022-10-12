@@ -13,6 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Index page with all workouts ('home')
+Route::get('/', [WorkoutController::class, 'index']);
+
+// 'Create workout' page (form) 
+Route::get('/workouts/create', [WorkoutController::class, 'create']);
+
+// 'Post created item' page
+Route::post('/workouts', [WorkoutController::class, 'store']);
+
+// 'Edit workout' page (form) 
+Route::get('/workouts/edit', [WorkoutController::class, 'edit']);
+
+// 'Update changes on the item' page
+Route::put('/workouts/{workout}', [WorkoutController::class, 'update']);
+
+// Delete one workout form
+Route::delete('workouts/{workout}', [WorkoutController::class, 'delete']);
+
+// Show 'one workout' page (detail)
+Route::get('/workouts/{workout}', [WorkoutController::class, 'show']);
