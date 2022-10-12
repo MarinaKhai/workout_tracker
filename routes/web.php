@@ -28,7 +28,7 @@ Route::get('/workouts/edit', [WorkoutController::class, 'edit']);
 // 'Update changes on the item' page
 Route::put('/workouts/{workout}', [WorkoutController::class, 'update']);
 
-// Delete one workout
+// Delete one workout form
 Route::delete('workouts/{workout}', [WorkoutController::class, 'delete']);
 
 // Show 'one workout' page (detail)
